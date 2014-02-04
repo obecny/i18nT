@@ -8,7 +8,7 @@ module.exports = function (grunt) {
         'author: <%= pkg.author %>\n' +
         '<%= pkg.description %>\n' +
         'generated on:\n' +
-        '<%= grunt.template.today("yyyy-mm-dd HH:mm") %> version: <%= pkg.version %> \n' +
+        '<%= grunt.template.today("yyyy-mm-dd HH:MM") %> version: <%= pkg.version %> \n' +
         '*/\n\n';
 
     grunt.initConfig({
@@ -24,7 +24,7 @@ module.exports = function (grunt) {
                 separator: '\n'
             },
             dist: {
-                src: ['src/i18nT_module.js','src/i18nT_provider.js','src/i18nT_filter.js','src/i18nT_directive.js', ],
+                src: ['src/i18nT_module.js','src/i18nT_provider.js','src/i18nT_filter.js','src/i18nT_directive.js'],
                 dest: 'lib/i18nT.js'
             }
         },
