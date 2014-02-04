@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myFirstApp">
+<head>
+    <title>i18nT Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular.min.js"></script>
+    <script type="text/javascript" src="../lib/i18nT.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="en.js"></script>
+    <script type="text/javascript" src="pl.js"></script>
+    <script type="text/javascript" src="hello.js"></script>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<div ng-controller="HelloController">
+    <div i18nT="CHOOSE_LANG"></div>
+    <a ng-click="setLang('en')" href="#" i18nT="EN"></a>
+    <a ng-click="setLang('pl')" href="#">{{'PL' | i18nT}}</a>
+
+    <a ng-click="showHello()" href="#">{{'SHOW_HELLO' | i18nT}}</a>
+
+    <p ng-bind="'MAIN.HELLO' | i18nT"></p>
+
+    <p ng-bind="'MAIN.DESCRIPTION' | i18nT"></p>
+    <table border="1    ">
+        <tr ng-repeat="post in [0,1,2,3,6,8,21,22,25,27]">
+            <td>{{post}}</td>
+            <td>{{'POSTS.INFO' | i18nT:[{n:post}]}}</td>
+            <td>{{'POSTS.PERSON_POSTS' | i18nT:[{gender:'male',n:post,k:post-2,first:'Peter',second:'John'}]  }}</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
