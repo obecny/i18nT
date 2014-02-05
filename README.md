@@ -4,7 +4,8 @@ i18nT
 angular translation module with custom filters for different languages
 with support for different grammar cases
 
-<a href="http://i18nt.obecny.eu/" target="_blank">Live example</a>
+
+<a href="http://obecny.github.io/i18nT/" target="_blank">i18nT Page</a>
 
 This is example of using i18nT
 
