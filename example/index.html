@@ -21,11 +21,23 @@
     <p ng-bind="'MAIN.HELLO' | i18nT"></p>
 
     <p ng-bind="'MAIN.DESCRIPTION' | i18nT"></p>
-    <table border="1    ">
+    <p>
+        <span>{{</span>'POSTS.PERSON_POSTS' | i18nT:[{gender:'male',n:post,k:post-2,first:'Peter',second:'John'}]<span>}}</span>
+        <br>
+        <span>{{</span>'POSTS.PERSON_POSTS' | i18nT:[{gender:'female',n:post,k:post-2,first:'Anna',second:'Christine'}]<span>}}</span>
+    </p>
+    <table border="1">
+        <thead>
+            <th>index</th>
+            <th>simple case</th>
+            <th>male case</th>
+            <th>female case</th>
+        </thead>
         <tr ng-repeat="post in [0,1,2,3,6,8,21,22,25,27]">
             <td>{{post}}</td>
             <td>{{'POSTS.INFO' | i18nT:[{n:post}]}}</td>
-            <td>{{'POSTS.PERSON_POSTS' | i18nT:[{gender:'male',n:post,k:post-2,first:'Peter',second:'John'}]  }}</td>
+            <td>{{'POSTS.PERSON_POSTS' | i18nT:[{gender:'male',n:post,k:post-2,first:'Peter',second:'John'}]}}</td>
+            <td>{{'POSTS.PERSON_POSTS' | i18nT:[{gender:'female',n:post,k:post-2,first:'Anna',second:'Christine'}]}}</td>
         </tr>
     </table>
 </div>
