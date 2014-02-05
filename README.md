@@ -5,7 +5,8 @@ angular translation module with custom filters for different languages
 with regex support
 
 Live example:
-<a href="http://i18nt.obecny.eu/" target="_blank">http://i18nt.obecny.eu/</a>
+
+<a href="http://i18nt.obecny.eu/" target="_blank">i18nt.obecny.eu</a>
 
 
 This is example of using i18nT
