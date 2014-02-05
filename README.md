@@ -2,11 +2,9 @@ i18nT
 =====
 
 angular translation module with custom filters for different languages
-with regex support
+with support for different grammar cases
 
-Live example:
-
-<a href="http://i18nt.obecny.eu/" target="_blank">i18nt.obecny.eu</a>
+<a href="http://i18nt.obecny.eu/" target="_blank">Live example</a>
 
 This is example of using i18nT
 
