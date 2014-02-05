@@ -4,6 +4,10 @@ i18nT
 angular translation module with custom filters for different languages
 with regex support
 
+Live example:
+<a href="http://i18nt.obecny.eu/">http://i18nt.obecny.eu/</a>
+
+
 This is example of using i18nT
 
 1. Directive <br>
