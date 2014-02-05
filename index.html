@@ -1,58 +1,85 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en" ng-app="myFirstApp">
+<head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular.min.js"></script>
+    <script type="text/javascript" src="example/i18nT.min.js"></script>
+    <script type="text/javascript" src="example/app.js"></script>
+    <script type="text/javascript" src="example/en.js"></script>
+    <script type="text/javascript" src="example/pl.js"></script>
+    <script type="text/javascript" src="example/hello.js"></script>
 
     <title>I18nt by obecny</title>
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <header>
-      <div class="container">
+<header>
+    <div class="container">
         <h1>I18nt</h1>
+
         <h2>angular translation module with custom filters for different languages</h2>
 
         <section id="downloads">
-          <a href="https://github.com/obecny/i18nT/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/obecny/i18nT/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/obecny/i18nT" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+            <a href="https://github.com/obecny/i18nT/zipball/master" class="btn">Download as .zip</a>
+            <a href="https://github.com/obecny/i18nT/tarball/master" class="btn">Download as .tar.gz</a>
+            <a href="https://github.com/obecny/i18nT" class="btn btn-github"><span class="icon"></span>View on
+                GitHub</a>
         </section>
-      </div>
-    </header>
-
-    <div class="container">
-      <section id="main_content">
-        <h1>
-<a name="i18nt" class="anchor" href="#i18nt"><span class="octicon octicon-link"></span></a>i18nT</h1>
-
-<p>angular translation module with custom filters for different languages
-with support for different grammar cases</p>
-
-<p><a href="http://i18nt.obecny.eu/" target="_blank">Live example</a></p>
-
-<p>This is example of using i18nT</p>
-
-<ol>
-<li><p>Directive <br>
-&lt;p ng-bind="'MAIN.HELLO' | i18nT"&gt;&lt;/p&gt;<br></p></li>
-<li><p>Filter <br>
-&lt;span&gt;{{'POSTS.INFO' | i18nT:[{n:post}]}}&lt;/span&gt;<br>
-&lt;span&gt;{{'POSTS.PERSON_POSTS' | i18nT:[{gender:'male',n:post,k:post-2,first:'Peter',second:'John'}]}}&lt;/span&gt;<br>
-&lt;span&gt;{{'POSTS.PERSON_POSTS' | i18nT:[{gender:'female',n:post,k:post-2,first:'Anna',second:'Christine'}]}}&lt;/span&gt;<br><br></p></li>
-<li>In Controller<br>
-alert(i18nT('MAIN.HELLO'));<br>
-</li>
-</ol><p>For more info see the "example" folder
-<br></p>
-      </section>
     </div>
+</header>
 
-    
-  </body>
+<div class="container">
+    <section id="main_content">
+        <h1>
+            <a name="i18nt" class="anchor" href="#i18nt"><span class="octicon octicon-link"></span></a>i18nT</h1>
+
+        <p>angular translation module with custom filters for different languages
+            with support for different grammar cases</p>
+
+        <p><a href="http://i18nt.obecny.eu/" target="_blank">Live example</a></p>
+
+        <p>This is example of using i18nT</p>
+
+        <div ng-controller="HelloController">
+            <div i18nT="CHOOSE_LANG"></div>
+            <a ng-click="setLang('en')" href="#!" i18nT="EN"></a>
+            <a ng-click="setLang('pl')" href="#!">{{'PL' | i18nT}}</a>
+
+            <a ng-click="showHello()" href="#">{{'SHOW_HELLO' | i18nT}}</a>
+
+            <p ng-bind="'MAIN.HELLO' | i18nT"></p>
+
+            <p ng-bind="'MAIN.DESCRIPTION' | i18nT"></p>
+            <p>
+                <span>{{</span>'POSTS.PERSON_POSTS' | i18nT:[{gender:'male',n:post,k:post-2,first:'Peter',second:'John'}]<span>}}</span>
+                <br>
+                <span>{{</span>'POSTS.PERSON_POSTS' | i18nT:[{gender:'female',n:post,k:post-2,first:'Anna',second:'Christine'}]<span>}}</span>
+            </p>
+            <table border="1">
+                <thead>
+                <th>index</th>
+                <th>simple case</th>
+                <th>male case</th>
+                <th>female case</th>
+                </thead>
+                <tr ng-repeat="post in [0,1,2,3,6,8,21,22,25,27]">
+                    <td>{{post}}</td>
+                    <td>{{'POSTS.INFO' | i18nT:[{n:post}]}}</td>
+                    <td>{{'POSTS.PERSON_POSTS' | i18nT:[{gender:'male',n:post,k:post-2,first:'Peter',second:'John'}]}}</td>
+                    <td>{{'POSTS.PERSON_POSTS' | i18nT:[{gender:'female',n:post,k:post-2,first:'Anna',second:'Christine'}]}}</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+</div>
+
+
+</body>
 </html>
