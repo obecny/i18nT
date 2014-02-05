@@ -8,7 +8,6 @@ Live example:
 
 <a href="http://i18nt.obecny.eu/" target="_blank">i18nt.obecny.eu</a>
 
-
 This is example of using i18nT
 
 1. Directive <br>
@@ -22,5 +21,6 @@ This is example of using i18nT
 3. In Controller<br>
     alert(i18nT('MAIN.HELLO'));<br>
 
+For more info see the "example" folder
 <br>
 
